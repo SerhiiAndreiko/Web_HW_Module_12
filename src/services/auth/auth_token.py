@@ -27,7 +27,7 @@ class AuthToken(PassCrypt):
 
     # constructor
     def __init__(
-        self, init_key: str | None = None, init_algorithm: str = "HS512"
+            self, init_key: str | None = None, init_algorithm: str = "HS512"
     ) -> None:
         self.SECRET_KEY: str = (
             init_key if init_key else environ.get("TOKEN_SECRET_KEY", "")
@@ -54,8 +54,8 @@ class AuthToken(PassCrypt):
 
     # define a function to generate a new access token
     async def create_access_token(
-        self, data: dict, expires_delta: Optional[float] = None
-    ) -> tuple[str,datetime]:
+            self, data: dict, expires_delta: Optional[float] = None
+    ) -> tuple[str, datetime]:
         to_encode = data.copy()
         if expires_delta:
             expire = datetime.utcnow() + timedelta(seconds=expires_delta)

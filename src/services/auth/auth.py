@@ -8,9 +8,9 @@ from jose import JWTError, jwt
 
 from src.database.db import get_db
 from src.database.models import User
-from .auth_token import AuthToken
+from src.services.auth.auth_token import AuthToken
 from src.repository import users as repository_users
-from src.shemas.auth import AccessTokenRefreshResponse
+from src.schematic.auth import AccessTokenRefreshResponse
 
 
 class Auth(AuthToken):
